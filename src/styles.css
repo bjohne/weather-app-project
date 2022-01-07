@@ -1,0 +1,66 @@
+body {
+  background: #40a8c4;
+}
+input {
+  color: #404969;
+  background: rgba(247, 170, 0, 0.5);
+  border: 10px solid transparent;
+  border-radius: 8px;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+button {
+  background: rgba(247, 170, 0, 0.5);
+  color: #235784;
+  border-radius: 10px;
+
+  border: 5px solid transparent;
+}
+button:hover {
+  background: #f7aa00;
+}
+
+.list-group {
+  border: transparent;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.city-chosen {
+  color: rgb(242, 121, 0);
+}
+#cityChosen1 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+.card-text .city-chosen {
+  font-size: 18px;
+}
+.card-body {
+  padding: 0px 30px;
+}
+
+.day {
+  text-align: center;
+  font-size: 17px;
+}
+
+.icon {
+  text-align: center;
+  font-size: 14px;
+}
+.temp {
+  text-align: left;
+  font-size: 14px;
+  color: #404969;
+}
+.container {
+  background: #bcdbdf;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  color: #235784;
+}
