@@ -43,28 +43,23 @@ let updateTime = document.querySelector("#current-time");
 updateTime.innerHTML = showTime(currentTime);
 
 function showWeather(response) {
-  console.log(response.data.weather);
-  let cityChosen1 = document.querySelector("#cityChosen1");
-  let cityChosen2 = document.querySelector("#cityChosen2");
-  cityChosen1.innerHTML = response.data.name;
-  cityChosen2.innerHTML = response.data.name;
+  document.querySelector("#cityChosen1").innerHTML = response.data.name;
+  document.querySelector("#cityChosen2").innerHTML = response.data.name;
 
-  let currentTemp = document.querySelector("#currentTempDegrees");
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
-  let currentTempUnit = document.querySelector("#currentTempUnit");
-  currentTempUnit.innerHTML = "°C";
-  console.log(Math.round(response.data.main.temp));
+  document.querySelector("#currentTempDegrees").innerHTML = Math.round(
+    response.data.main.temp
+  );
 
-  let currentDescription = document.querySelector("#currentDescription");
-  console.log(currentDescription);
-  console.log(response.data.weather[0].main);
-  currentDescription.innerHTML = response.data.weather[0].main;
+  document.querySelector("#currentTempUnit").innerHTML = "°C";
 
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = response.data.main.humidity;
+  document.querySelector("#currentDescription").innerHTML =
+    response.data.weather[0].main;
 
-  let currentWindspeed = document.querySelector("#wind");
-  currentWindspeed.innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function searchCity(city) {
@@ -81,11 +76,7 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-let formCity = document.querySelector("#form-city");
-formCity.addEventListener("submit", handleSubmit);
-
 function showCurrentTemp(position) {
-  console.log(position.coords);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "85504bf7b1be17a8a141d12a004a2570";
@@ -98,6 +89,10 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentTemp);
 }
+
+let formCity = document.querySelector("#form-city");
+formCity.addEventListener("submit", handleSubmit);
+
 let currentLocation = document.querySelector("#form-currentLocation");
 currentLocation.addEventListener("submit", getCurrentLocation);
 
@@ -125,3 +120,5 @@ fahrenheitBtn.addEventListener("click", convertToFahrenheit);
 
 let celsiusBtn = document.querySelector("#celsius");
 celsiusBtn.addEventListener("click", convertToCelsius);
+
+searchCity("Amsterdam");
