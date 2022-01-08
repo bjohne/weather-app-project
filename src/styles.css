@@ -56,6 +56,11 @@ button:hover {
   font-size: 14px;
   color: #404969;
 }
+.open-source-link {
+  display: block;
+  text-align: center;
+  padding: 20px;
+}
 .container {
   background: #bcdbdf;
   max-width: 700px;
