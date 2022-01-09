@@ -21,7 +21,12 @@ button {
 button:hover {
   background: #f7aa00;
 }
-
+#form-city {
+  margin-block-end: 0;
+}
+#form-currenLocation {
+  margin-block-end: 0;
+}
 .list-group {
   border: transparent;
   font-size: 15px;
