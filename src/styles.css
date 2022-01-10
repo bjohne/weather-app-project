@@ -1,5 +1,6 @@
 body {
   background: #40a8c4;
+  font-family: "Cairo", sans-serif;
 }
 input {
   color: #404969;
@@ -34,10 +35,11 @@ button:hover {
 }
 
 .city-chosen {
+  font-family: "Patrick Hand", cursive;
   color: rgb(242, 121, 0);
 }
 #cityChosen1 {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 0;
 }
 .card-text .city-chosen {
@@ -45,6 +47,9 @@ button:hover {
 }
 .card-body {
   padding: 0px 30px;
+}
+#current-data {
+  background: #f9f5f0;
 }
 
 .day {
@@ -64,7 +69,10 @@ button:hover {
 .open-source-link {
   display: block;
   text-align: center;
-  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  font-family: monospace;
+  text-decoration: none;
 }
 .container {
   background: #bcdbdf;
