@@ -45,9 +45,6 @@ button:hover {
 .card-text .city-chosen {
   font-size: 18px;
 }
-.card {
-  word-wrap: normal;
-}
 .card-body {
   padding: 0px 0px 10px 25px;
 }
