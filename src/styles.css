@@ -46,8 +46,11 @@ a {
   font-size: 28px;
   margin-bottom: 0;
 }
-.card-text .city-chosen {
-  font-size: 18px;
+.card-text {
+  font-size: 20px;
+}
+#cityChosen2 {
+  font-size: 24px;
 }
 .card-body {
   padding: 0px 0px 10px 25px;
