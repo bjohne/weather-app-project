@@ -60,7 +60,7 @@ function showWeather(response) {
   document.querySelector("#current-time").innerHTML = formatTime(
     response.data.dt * 1000
   );
-
+  tempCelsius = response.data.main.temp;
   let icon = document.querySelector("#currentIcon");
   icon.setAttribute(
     "src",
@@ -105,21 +105,21 @@ currentLocation.addEventListener("submit", getCurrentLocation);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let currentTempDegrees = document.querySelector("#currentTempDegrees");
-  let tempCelsius = 17;
-  let tempFahrenheit = Math.round((tempCelsius * 9) / 5 + 32);
+  let tempFahrenheit = (tempCelsius * 9) / 5 + 32;
+  currentTempDegrees.innerHTML = Math.round(tempFahrenheit);
   let currentTempUnit = document.querySelector("#currentTempUnit");
   currentTempUnit.innerHTML = "°F";
-  currentTempDegrees.innerHTML = `${tempFahrenheit}`;
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let currentTempDegrees = document.querySelector("#currentTempDegrees");
-  let tempCelsius = 17;
+  currentTempDegrees.innerHTML = Math.round(tempCelsius);
   let currentTempUnit = document.querySelector("#currentTempUnit");
   currentTempUnit.innerHTML = "°C";
-  currentTempDegrees.innerHTML = `${tempCelsius}`;
 }
+
+let tempCelsius = null;
 
 let fahrenheitBtn = document.querySelector("#fahrenheit");
 fahrenheitBtn.addEventListener("click", convertToFahrenheit);
