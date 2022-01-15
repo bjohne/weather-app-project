@@ -22,6 +22,10 @@ button {
 button:hover {
   background: #f7aa00;
 }
+a {
+  text-decoration: none;
+  color: #5c5757;
+}
 #form-city {
   margin-block-end: 0;
 }
@@ -66,13 +70,15 @@ button:hover {
   font-size: 14px;
   color: #404969;
 }
+
+#currentDescription:first-letter {
+  text-transform: capitalize;
+}
 .open-source-link {
-  display: block;
   text-align: center;
   padding-top: 0px;
   padding-bottom: 5px;
   font-family: monospace;
-  text-decoration: none;
 }
 .container {
   background: #bcdbdf;

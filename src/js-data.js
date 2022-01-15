@@ -1,5 +1,3 @@
-let currentTime = new Date();
-
 function showDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let months = [
@@ -17,30 +15,29 @@ function showDate(date) {
     "Dec",
   ];
 
-  let currentDay = days[currentTime.getDay()];
-  let currentDate = currentTime.getDate();
-  let currentMonth = months[currentTime.getMonth()];
+  let currentDay = days[date.getDay()];
+  let currentDate = date.getDate();
+  let currentMonth = months[date.getMonth()];
 
   return `${currentDay}, ${currentDate} ${currentMonth}`;
 }
+let currentD = new Date();
 let updateDate = document.querySelector("#current-date");
-updateDate.innerHTML = showDate(currentTime);
+updateDate.innerHTML = showDate(currentD);
 
-function showTime(time) {
-  let hours = currentTime.getHours();
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = currentTime.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   return `${hours}:${minutes}`;
 }
-
-let updateTime = document.querySelector("#current-time");
-updateTime.innerHTML = showTime(currentTime);
 
 function showWeather(response) {
   document.querySelector("#cityChosen1").innerHTML = response.data.name;
@@ -53,12 +50,21 @@ function showWeather(response) {
   document.querySelector("#currentTempUnit").innerHTML = "°C";
 
   document.querySelector("#currentDescription").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#current-time").innerHTML = formatTime(
+    response.data.dt * 1000
+  );
+
+  let icon = document.querySelector("#currentIcon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
