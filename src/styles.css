@@ -1,5 +1,8 @@
 body {
   background: #40a8c4;
+  background-image: url("Clouds.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Cairo", sans-serif;
 }
 input {
@@ -82,9 +85,10 @@ a {
   padding-top: 0px;
   padding-bottom: 5px;
   font-family: monospace;
+  font-size: 14px;
 }
 .container {
-  background: #bcdbdf;
+  background: rgba(188, 219, 223, 0.8);
   max-width: 700px;
   margin: 30px auto;
   padding: 25px;
