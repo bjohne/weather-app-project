@@ -49,7 +49,7 @@ a {
   font-size: 28px;
   margin-bottom: 0;
 }
-.card-text {
+.forecast-text {
   font-size: 20px;
 }
 #cityChosen2 {
@@ -58,23 +58,23 @@ a {
 .card-body {
   padding: 0px 0px 10px 25px;
 }
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+.weather-forecast-temperatures-min {
+  opacity: 0.6;
+}
 #current-data {
   background: #f9f5f0;
-}
-
-.day {
-  text-align: center;
-  font-size: 17px;
-}
-
-.icon {
-  text-align: center;
-  font-size: 14px;
-}
-.temp {
-  text-align: left;
-  font-size: 14px;
-  color: #404969;
 }
 
 #currentDescription:first-letter {
