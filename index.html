@@ -19,7 +19,9 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Patrick+Hand&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://kit.fontawesome.com/0203cac26a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -32,21 +34,17 @@
               autocomplete="off"
               name=""
               id="search-text-input"
+              class="input"
             />
-            <input type="submit" value="Search" />
-          </form>
-          <br />
-          <form id="form-currentLocation">
             <input
-              type="submit"
-              value="Current location"
-              name=""
-              id="current-location"
-            />
+                  type="submit"          
+                  value="Search">
           </form>
           <br />
-          <button id="celsius">°C</button>
-          <button id="fahrenheit">°F</button>
+          <button id="btn-currentLocation">          
+              <i class="fas fa-map-marker-alt"></i>           
+          </button>
+          <br />
         </div>
 
         <div class="col-sm-4">
@@ -56,9 +54,11 @@
 
               <div class="card-list-group" style="width: 10rem">
                 <ul class="list-group">
-                  <li class="list-group-item-date" id="current-date"></li>
                   <li><small> last updated at</small></li>
-                  <li class="list-group-item-time" id="current-time"></li>
+
+                  <li class="list-group-item-date" id="current-date">
+                  <span class="list-group-item-time" id="current-time"span></li>
+
                   <li>
                     Humidity:
                     <span class="list-group-item-rain" id="humidity"></span>%
@@ -79,11 +79,12 @@
 
         <h1 id="currentTemperature">
           <span id="currentTempDegrees"></span>
-          <span id="currentTempUnit">°C</span><br />
-          <img src="#" id="currentIcon" />
+          <span id="currentTempUnit">°C</span>
         </h1>
+        <p class="current-icon"><img src="#" id="currentIcon" width="144" /></p>
+
         <p class="forecast-text">
-          Forecast for
+          This week's weather in
           <span class="city-chosen" id="cityChosen2">...</span>
         </p>
         <div class="weather-forecast" id="forecast"></div>

@@ -1,46 +1,25 @@
-function showDate(date) {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  let currentDay = days[date.getDay()];
-  let currentDate = date.getDate();
-  let currentMonth = months[date.getMonth()];
-
-  return `${currentDay}, ${currentDate} ${currentMonth}`;
-}
-let currentD = new Date();
-let updateDate = document.querySelector("#current-date");
-updateDate.innerHTML = showDate(currentD);
-
-function formatTime(timestamp) {
+function formatDate(timestamp) {
   let date = new Date(timestamp);
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
 
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${hours}:${minutes}`;
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
+
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -48,7 +27,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
@@ -66,7 +44,7 @@ function displayForecast(response) {
                   forecastDay.weather[0].icon
                 }@2x.png"
                 alt=""
-                width="42"
+                width="48"
               />
               <div class="weather-forecast-temperatures">
                 <span class="weather-forecast-temperatures-max">${Math.round(
@@ -86,12 +64,10 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "85504bf7b1be17a8a141d12a004a2570";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayForecast);
-  console.log(apiUrl);
 }
 
 function showWeather(response) {
@@ -102,8 +78,6 @@ function showWeather(response) {
     response.data.main.temp
   );
 
-  document.querySelector("#currentTempUnit").innerHTML = "°C";
-
   document.querySelector("#currentDescription").innerHTML =
     response.data.weather[0].description;
 
@@ -112,10 +86,9 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#current-time").innerHTML = formatTime(
+  document.querySelector("#current-date").innerHTML = formatDate(
     response.data.dt * 1000
   );
-  tempCelsius = response.data.main.temp;
 
   let icon = document.querySelector("#currentIcon");
   icon.setAttribute(
@@ -141,6 +114,7 @@ function handleSubmit(event) {
 }
 
 function showCurrentTemp(position) {
+  console.log(position.coords);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "85504bf7b1be17a8a141d12a004a2570";
@@ -156,32 +130,7 @@ function getCurrentLocation(event) {
 let formCity = document.querySelector("#form-city");
 formCity.addEventListener("submit", handleSubmit);
 
-let currentLocation = document.querySelector("#form-currentLocation");
-currentLocation.addEventListener("submit", getCurrentLocation);
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let currentTempDegrees = document.querySelector("#currentTempDegrees");
-  let tempFahrenheit = (tempCelsius * 9) / 5 + 32;
-  currentTempDegrees.innerHTML = Math.round(tempFahrenheit);
-  let currentTempUnit = document.querySelector("#currentTempUnit");
-  currentTempUnit.innerHTML = "°F";
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let currentTempDegrees = document.querySelector("#currentTempDegrees");
-  currentTempDegrees.innerHTML = Math.round(tempCelsius);
-  let currentTempUnit = document.querySelector("#currentTempUnit");
-  currentTempUnit.innerHTML = "°C";
-}
-
-let tempCelsius = null;
-
-let fahrenheitBtn = document.querySelector("#fahrenheit");
-fahrenheitBtn.addEventListener("click", convertToFahrenheit);
-
-let celsiusBtn = document.querySelector("#celsius");
-celsiusBtn.addEventListener("click", convertToCelsius);
+let currentLocation = document.querySelector("#btn-currentLocation");
+currentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("Amsterdam");
