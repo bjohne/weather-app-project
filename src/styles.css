@@ -5,38 +5,41 @@ body {
   background-repeat: no-repeat;
   font-family: "Cairo", sans-serif;
 }
+
 input {
   color: #404969;
-  background: rgba(247, 170, 0, 0.5);
+  background: rgba(188, 219, 223, 1);
   border: 10px solid transparent;
   border-radius: 8px;
 }
+
+button {
+  color: #404969;
+  background: rgba(188, 219, 223, 0.9);
+  border: 10px solid transparent;
+  border-radius: 8px;
+  margin-block-end: 20px;
+  transition: all 150ms ease-in-out;
+}
+
+button:hover {
+  background: rgba(64, 73, 105, 0.1);
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
   line-height: 2em;
   margin-bottom: -3.5rem;
 }
-button {
-  background: rgba(247, 170, 0, 0.5);
-  color: #235784;
-  border-radius: 10px;
 
-  border: 5px solid transparent;
-}
-button:hover {
-  background: #f7aa00;
-}
 a {
   text-decoration: none;
-  color: #5c5757;
 }
 #form-city {
   margin-block-end: 0;
 }
-#form-currenLocation {
-  margin-block-end: 0;
-}
+
 .list-group {
   border: transparent;
   font-size: 15px;
@@ -45,17 +48,23 @@ a {
 
 .city-chosen {
   font-family: "Patrick Hand", cursive;
-  color: rgb(242, 121, 0);
+  color: #ec6e4c;
 }
 #cityChosen1 {
   font-size: 28px;
   margin-bottom: 0;
 }
+.current-icon {
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: -1rem;
+}
 .forecast-text {
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 0rem;
 }
 #cityChosen2 {
-  font-size: 24px;
+  font-size: 22px;
 }
 .card-body {
   padding: 0px 0px 10px 25px;
@@ -64,17 +73,16 @@ a {
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
-  color: #000;
+  color: #235784;
 }
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
 }
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 14px;
 }
 .weather-forecast-temperatures-min {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 #currentDescription:first-letter {
@@ -91,7 +99,7 @@ a {
   background: rgba(188, 219, 223, 0.8);
   max-width: 700px;
   margin: 30px auto;
-  padding: 25px;
+  padding: 36px;
   border-radius: 10px;
   color: #235784;
 }
