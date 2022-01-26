@@ -1,20 +1,20 @@
 body {
   background: #40a8c4;
-  background-image: url("Clouds.jpg");
+  background-image: url("img/Clouds.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Cairo", sans-serif;
 }
-
 input {
-  color: #404969;
-  background: rgba(188, 219, 223, 1);
+  color: #235784;
+  background: rgba(188, 219, 223, 0.9);
   border: 10px solid transparent;
   border-radius: 8px;
+  margin-block-end: 20px;
 }
 
 button {
-  color: #404969;
+  color: #235784;
   background: rgba(188, 219, 223, 0.9);
   border: 10px solid transparent;
   border-radius: 8px;
@@ -35,66 +35,85 @@ h1 {
 
 a {
   text-decoration: none;
+  color: #404969;
 }
-#form-city {
-  margin-block-end: 0;
-}
-
-.list-group {
-  border: transparent;
-  font-size: 15px;
-  list-style-type: none;
+a:hover {
+  color: #00008b;
 }
 
 .city-chosen {
   font-family: "Patrick Hand", cursive;
   color: #ec6e4c;
 }
-#cityChosen1 {
-  font-size: 28px;
-  margin-bottom: 0;
+
+.list-group {
+  color: #235784;
+  font-size: 17px;
+  list-style-type: none;
 }
+
 .current-icon {
   text-align: center;
   font-size: 60px;
   margin-bottom: -1rem;
 }
+
 .forecast-text {
   font-size: 18px;
   margin-bottom: 0rem;
+  line-height: 1;
 }
-#cityChosen2 {
-  font-size: 22px;
-}
-.card-body {
-  padding: 0px 0px 10px 25px;
-  background: #f9f5f0;
-}
-.weather-forecast {
-  margin-top: 20px;
+.forecast-icon {
   text-align: center;
-  color: #235784;
 }
 .weather-forecast-date {
   font-size: 16px;
+  text-align: center;
 }
+
 .weather-forecast-temperatures {
   font-size: 14px;
+  text-align: center;
 }
+
 .weather-forecast-temperatures-min {
   opacity: 0.7;
+}
+
+#cityChosen1 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+#cityChosen2 {
+  font-size: 22px;
 }
 
 #currentDescription:first-letter {
   text-transform: capitalize;
 }
+
+#current-date {
+  font-size: 14px;
+  text-align: right;
+  opacity: 0.7;
+}
+
+#last-update {
+  font-size: 14px;
+  text-align: right;
+  opacity: 0.7;
+}
+
 .open-source-link {
   text-align: center;
   padding-top: 0px;
   padding-bottom: 5px;
   font-family: monospace;
   font-size: 14px;
+  color: #073860;
 }
+
 .container {
   background: rgba(188, 219, 223, 0.8);
   max-width: 700px;

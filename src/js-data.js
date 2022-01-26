@@ -1,7 +1,15 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[date.getDay()];
 
   let hours = date.getHours();
@@ -38,14 +46,15 @@ function displayForecast(response) {
         ` <div class="col-2">
               <div class="weather-forecast-date">${formatDay(
                 forecastDay.dt
-              )}</div>
+              )}</div> 
+              <div class="forecast-icon">
               <img
                 src="https://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
                 }@2x.png"
                 alt=""
                 width="48"
-              />
+              /></div>
               <div class="weather-forecast-temperatures">
                 <span class="weather-forecast-temperatures-max">${Math.round(
                   forecastDay.temp.max

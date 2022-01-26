@@ -21,74 +21,62 @@
     />
 
     <link rel="stylesheet" href="src/styles.css" />
-    <script src="https://kit.fontawesome.com/0203cac26a.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/0203cac26a.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <form id="form-city">
             <input
-              type="text"
+              type="search"
               placeholder="Enter city"
               autocomplete="off"
               name=""
               id="search-text-input"
-              class="input"
             />
-            <input
-                  type="submit"          
-                  value="Search">
+            <button><i class="fas fa-search"></i></button>
           </form>
-          <br />
-          <button id="btn-currentLocation">          
-              <i class="fas fa-map-marker-alt"></i>           
+
+          <button id="btn-currentLocation">
+            <i class="fas fa-map-marker-alt"></i>
           </button>
           <br />
         </div>
-
+        <div class="col-sm-2"></div>
         <div class="col-sm-4">
-          <div class="card" style="width: 13rem">
-            <div class="card-body" id="current-data">
-              <div class="card-title city-chosen" id="cityChosen1">...</div>
-
-              <div class="card-list-group" style="width: 10rem">
-                <ul class="list-group">
-                  <li><small> last updated at</small></li>
-
-                  <li class="list-group-item-date" id="current-date">
-                  <span class="list-group-item-time" id="current-time"span></li>
-
-                  <li>
-                    Humidity:
-                    <span class="list-group-item-rain" id="humidity"></span>%
-                  </li>
-                  <li>
-                    Wind:
-                    <span class="list-group-item-wind" id="wind"></span>km/h
-                  </li>
-                  <li
-                    class="list-group-item-description"
-                    id="currentDescription"
-                  ></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div class="city-chosen" id="cityChosen1">...</div>
+          <br />
+          <ul class="list-group">
+            <li>
+              Humidity:
+              <span id="humidity"></span>%
+            </li>
+            <li>
+              Wind:
+              <span id="wind"></span>km/h
+            </li>
+            <li id="currentDescription"></li>
+          </ul>
         </div>
-
-        <h1 id="currentTemperature">
-          <span id="currentTempDegrees"></span>
-          <span id="currentTempUnit">°C</span>
-        </h1>
-        <p class="current-icon"><img src="#" id="currentIcon" width="144" /></p>
-
-        <p class="forecast-text">
-          This week's weather in
-          <span class="city-chosen" id="cityChosen2">...</span>
-        </p>
-        <div class="weather-forecast" id="forecast"></div>
       </div>
+      <h1 id="currentTemperature">
+        <span id="currentTempDegrees"></span>
+        <span id="currentTempUnit">°C</span>
+      </h1>
+      <p class="current-icon"><img src="#" id="currentIcon" width="144" /></p>
+      <p class="forecast-text">
+        This week's weather in
+        <span class="city-chosen" id="cityChosen2">...</span><br />
+        <span id="last-update">
+          (last update : <span id="current-date"></span>)</span
+        >
+      </p>
+      <br />
+      <div class="weather-forecast" id="forecast"></div>
     </div>
 
     <div class="open-source-link">
