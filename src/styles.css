@@ -6,7 +6,7 @@ body {
   font-family: "Cairo", sans-serif;
 }
 input {
-  color: #235784;
+  color: #0e3b68;
   background: rgb(225, 228, 232, 0.8);
   border: 10px solid transparent;
   border-radius: 8px;
@@ -14,7 +14,7 @@ input {
 }
 
 button {
-  color: #235784;
+  color: #0e3b68;
   background: rgb(225, 228, 232, 0.8);
   border: 10px solid transparent;
   border-radius: 8px;
@@ -47,7 +47,7 @@ a:hover {
 }
 
 .list-group {
-  color: #235784;
+  color: #0e3b68;
   font-size: 17px;
   list-style-type: none;
 }
@@ -62,7 +62,7 @@ a:hover {
   font-size: 18px;
   margin-bottom: 0rem;
   line-height: 1;
-  color: #07588a;
+  color: #0e3b68;
 }
 .forecast-icon {
   text-align: center;
@@ -121,6 +121,6 @@ a:hover {
   margin: 30px auto;
   padding: 36px;
   border-radius: 10px;
-  color: #07588a;
+  color: #0e3b68;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
