@@ -1,5 +1,5 @@
 body {
-  background: #40a8c4;
+  background: #6ea9c7;
   background-image: url("img/Clouds.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -7,7 +7,7 @@ body {
 }
 input {
   color: #235784;
-  background: rgba(188, 219, 223, 0.9);
+  background: rgb(225, 228, 232, 0.8);
   border: 10px solid transparent;
   border-radius: 8px;
   margin-block-end: 20px;
@@ -15,7 +15,7 @@ input {
 
 button {
   color: #235784;
-  background: rgba(188, 219, 223, 0.9);
+  background: rgb(225, 228, 232, 0.8);
   border: 10px solid transparent;
   border-radius: 8px;
   margin-block-end: 20px;
@@ -23,7 +23,7 @@ button {
 }
 
 button:hover {
-  background: rgba(64, 73, 105, 0.1);
+  background: rgba(169, 200, 206);
 }
 
 h1 {
@@ -43,7 +43,7 @@ a:hover {
 
 .city-chosen {
   font-family: "Patrick Hand", cursive;
-  color: #ec6e4c;
+  color: #e1e4e8;
 }
 
 .list-group {
@@ -62,6 +62,7 @@ a:hover {
   font-size: 18px;
   margin-bottom: 0rem;
   line-height: 1;
+  color: #07588a;
 }
 .forecast-icon {
   text-align: center;
@@ -77,16 +78,17 @@ a:hover {
 }
 
 .weather-forecast-temperatures-min {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #cityChosen1 {
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 0;
 }
 
 #cityChosen2 {
   font-size: 22px;
+  color: rgb(225, 228, 232, 0.8);
 }
 
 #currentDescription:first-letter {
@@ -96,13 +98,12 @@ a:hover {
 #current-date {
   font-size: 14px;
   text-align: right;
-  opacity: 0.7;
 }
 
 #last-update {
   font-size: 14px;
   text-align: right;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .open-source-link {
@@ -115,10 +116,11 @@ a:hover {
 }
 
 .container {
-  background: rgba(188, 219, 223, 0.8);
+  background: rgb(108, 170, 198, 0.5);
   max-width: 700px;
   margin: 30px auto;
   padding: 36px;
   border-radius: 10px;
-  color: #235784;
+  color: #07588a;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
